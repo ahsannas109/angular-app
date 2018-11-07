@@ -19,12 +19,22 @@ export class AppComponent {
     // this.http is the injected HttpClient
     const uploadData = new FormData();
     uploadData.append('file', this.selectedFiles, this.selectedFiles.name);
-    this.http.post('http://35.231.215.152:8080/process', uploadData).subscribe(response => {
-      console.log(response); // handle event here
-      return this.imageSre  = 'http://35.231.215.152:8080/upload/' + <string> response.result;
-      document.getElementById("img_head").style.display = 'none';
 
-    });
+    this.http.post('http://35.231.215.152:8080/process', uploadData)
+      .subscribe((response: any) => {
+        document.getElementById("detect").style.display ='block';
+      // console.log(response); // handle event here
+
+      this.imageSre  = 'http://35.231.215.152:8080/upload/' + <string> response.result;
+
+
+    }, error => {
+        alert('Corrupt image uploaded, please upload correct image')
+        console.log('oops', error);
+        this.errorMessage = 'the file uploaded is corrupted, make sure to upload a file of valid format';
+        document.getElementById("error").style.display ='block';
+      });
+
 
   }
 }

@@ -1,6 +1,26 @@
-<h1>File Upload</h1>
-<input type="file" (change)="onFileSelected($event)">
-<button type="button" (click)="onUpload()">Upload</button>
+<img class="logo" src="assets/img/logo-tensorminds.png">
+
+<h1>Gun Detection app</h1>
+<p>upload an image in the upload box below to detect guns</p>
+<br/>
+<div>
+  <div class="file_upload">
+    <input id="file" type="file" class="input_background" (change)="onFileSelected($event)" >
+    <button type="button" (click)="onUpload()" >Upload</button>
+  </div>
 <br />
-<h1 id="img_head" style="display: block">Detected Image</h1>
-<img src="{{imageSre}}">
+  <div class="detect_box" id="detect">
+    <h2 id="img_head" style="margin: 0 auto;">Detected Image</h2>
+    <br/>
+    <!--<img class="logo" src="assets/img/logo-tensorminds.png">-->
+    <img class="img_box" src="{{imageSre}}">
+
+  </div>
+  <div class="error_box" id="error">
+    <h2 id="error_head" style="color: red">Upload Failed</h2>
+    <p style="color: red">
+      {{errorMessage}}
+    </p>
+
+  </div>
+</div>

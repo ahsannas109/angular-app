@@ -1,0 +1,44 @@
+
+h1{
+  width: 30%;
+  /*border: 2px solid black;*/
+  padding-bottom: 20px;
+  margin: 0 auto;
+}
+p{
+  width: 30%;
+  /*border: 2px solid black;*/
+  padding-bottom: 5px;
+  margin: 0 auto;
+}
+.logo{
+  padding-bottom: 50px;
+}
+.input_background{
+  background-color: white;
+}
+
+.file_upload{
+  width: 30%;
+  margin: 0 auto;
+}
+
+.img_box{
+  width: 30%;
+  display: block;
+  /*text-align: center;*/
+  margin: 0 auto;
+
+}
+.detect_box{
+  display: none;
+  margin: 0 auto;
+  width: 30%;
+
+}
+.error_box{
+  width: 30%;
+  display: none;
+  margin: 0 auto;
+
+}
